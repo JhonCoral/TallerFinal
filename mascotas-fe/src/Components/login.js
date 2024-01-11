@@ -1,5 +1,5 @@
 
-     // Import necessary dependencies
+     // 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,34 +9,34 @@ import { faCat } from '@fortawesome/free-solid-svg-icons';
 
 // Login component
 const LoginComponent = () => {
-  // State for storing username and password
+  // 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  // Function to handle login button click
+  
   const handleLogin = () => {
-    // Predefined username and password
+    // 
     const predefinedUsername = 'Jhon';
     const predefinedPassword = 'Jhon#1234';
 
-    // Check if both username and password are provided
+    // 
     if (!username || !password) {
       setErrorMessage('Por favor, ingrese usuario y contraseña.');
       return;
     }
 
-    // Check if entered username and password match the predefined values
+    // 
     if (username === predefinedUsername && password === predefinedPassword) {
-      // Successful login, navigate to '/admin'
+      // 
       navigate('/admin');
     } else {
-      // Display error message for incorrect credentials
+      // 
       setErrorMessage('Usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.');
     }
   };
 
-  // Hook to enable navigation
+  // 
   const navigate = useNavigate();
 
   return (
@@ -72,7 +72,7 @@ const LoginComponent = () => {
             value={username}
             onChange={(e) => {
               setUsername(e.target.value);
-              setErrorMessage(''); // Clear error message when user starts typing
+              setErrorMessage(''); // 
             }}
           />
         </div>
@@ -87,7 +87,7 @@ const LoginComponent = () => {
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
-              setErrorMessage(''); // Clear error message when user starts typing
+              setErrorMessage(''); // 
             }}
           />
         </div>

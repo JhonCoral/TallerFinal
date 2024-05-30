@@ -29,6 +29,13 @@ function App() {
       setAllMascotas(result.data);
     }
   }
+  const validarCampos = () => {
+    if (!nombre || !telefono || !correo || id === -1) {
+      mostrarAlerta('Debe llenar todos los campos', 'error');
+      return false;
+    }
+    return true;
+  };
   const realizarSolicitud= async()=>{
     const dataset={
       nombre:nombre,
